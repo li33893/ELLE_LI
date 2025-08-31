@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            color:#333;
+        }
+
+        .navbar{
+            position: fixed;
+            display:flex;
+            justify-content: center;
+            gap:30px;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 0.5px solid black;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+
+        .navbar a {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 8px 0;
+
+        }
+        
+        
+
+        .navbar a:hover {
+            color: #999;
+        }
+
+
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: rgba(194,132,179);
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        #aboutContainer{
+            margin:auto 200px;
+            font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium', 'Roboto Condensed', 'Arial Narrow', 'Oswald', sans-serif;         
+
+        }
+
+        #aboutMeContainer{
+
+        }
+
+        .aboutMeContainer{
+
+            margin:0 auto;
+        }
+
+        h2{
+            font-size: 42px;
+            font-weight: 300;
+            color:#333;
+            display:block;
+            padding:50px 0 50px 50px;
+        }
+
+        h3{
+            font-size: 30px;
+            font-weight: 300;
+            color:black;
+            display:block;
+            padding:30px 0 40px 30px;
+            font-weight:200;
+
+        }
+
+        .titleUnderLine{
+            background-color: #333;
+            height:0.5px;
+            
+        }
+
+        .personalInfoBox{
+            width:1000px;
+            height:fit-content;
+            margin:50px;
+        }
+
+        table,th{
+            border-right: 2px solid rgba(194,132,179);
+            border-collapse: separate;
+            text-align: left;
+            padding: 5px 20px;
+            width:150px;
+            border-spacing: 0px 10px;
+        }
+
+        table,td{
+            border: 1px solid white;
+            border-collapse: separate;
+            text-align: left;
+            padding: 5px 20px;
+            width:800px;
+            height:auto;
+            line-height:30px;
+            border-spacing: 0px 10px;
+        }
+
+        td li{
+            list-style-type: none;
+        }
+
+        .personalityBox{
+            width:1000px;
+            height:fit-content;
+            margin:50px;          
+        }
+
+        #whatIGot{
+
+        }
+
+        .whatIGotContainer{
+            margin-top: 40px;
+            margin-left:80px;
+        }
+
+        .whatIGot{
+           
+        }
+
+        .whatIGot span{
+            display: inline-block;
+            line-height:40px;
+            width:180px;
+            height:40px;
+
+        }
+
+        .whatIGot>div>div{
+            display: inline-block;
+            position:relative;
+            width:500px;
+            height:40px;
+            background-color: #f3f0f0;
+        }
+
+        .whatIGot>div>div>div{
+            display: inline-block;
+            position:absolute;
+            bottom:0;
+            left:0;
+            height:40px;
+            background-color: rgba(194,132,179);
+        }
+
+        .skillRow {
+            display: flex;
+            align-items: center; 
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        #portfolio{
+
+
+        }
+        
+
+        .footContainer {
+            width:100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+
+
+        .foot{
+            height:100px;
+            width: 100%;
+            border-top: 1px solid #333;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            gap:30px;
+            padding-top: 50px;
+
+        }
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div><a href="#aboutMeContainer">나에 대해서</a></div>
+        <div><a href="#whatIGot">보유 기술</a></div>
+        <div><a href="#">포트폴리오</a></div>
+        <div><a href="introduce.html">홈</a></div>
+    </div>
+    <div id="aboutContainer">
+        <h2 style="padding-top:100px" id="aboutMeContainer">나에 대해서</h2>
+        <div class="titleUnderLine"></div>
+        <div class="aboutMeContainer">
+            <div class="personalInfoBox" >
+                <h3>인적사항</h3>
+                <table>
+                    <tr>
+                        <th>이름</th>
+                        <td>LI MEILING</td>
+                    </tr>
+
+                    <tr>
+                        <th>국적</th>
+                        <td>중국</td>
+                    </tr>
+
+                    <tr>
+                        <th>출생년/월/일</th>
+                        <td>1998/02/19</td>
+                    </tr>
+
+                    <tr>
+                        <th>학력사항</th>
+                        <td>
+                            <ul>
+                                <li>2020: China University of Whatever 졸업, whatever 전공</li>
+                                <li>2025: 아무거나 대학 수료, 아무거나 전공</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    
+                </table>
+
+            </div>
+
+            <div class="personalityBox">
+                <h3>인성사항</h3>
+                <div>
+                    <table>
+                        <tr>
+                            <th>취미</th>
+                            <td>프로그래밍
+                                <br>
+                                노래방에 가서 배경 음악에 따라 가사 읊는 것
+                                <br>
+                                쓸모없는 일들을 찾아서 인생 낭비하는 것
+                                <br>
+                                멍 떼리기
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>인성특징</th>
+                            <td>
+                            웃음의 문턱이 낮고 한 번 빵 터지기 시작하면 그치기가 힘듬
+                            <br>
+                            완벽주의+디테일에 집착
+                            <br>
+                            뭐든지 다 잘 잊어버림
+                            <br>
+                            느---------릿--------느--------릿
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>강점</th>
+                            <td>
+                            착하고 정직
+                            <br>
+                            끈질김
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>    
+        </div>
+
+
+        <div>
+            <h2 id="whatIGot">보유 기술</h2>
+            <div class="titleUnderLine"></div>
+            <div class="whatIGotContainer">
+                <div class="whatIGot">
+                    <div class="skillRow"><span>Python</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:5%; text-align: right;line-height: 40px; padding-right:8px">5%</div>발전 공간이 아주 큼<div></div></div></div>
+                    <br>
+                    <div class="skillRow"><span>Java</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:35%;text-align: right;line-height: 40px; padding-right:8px">35%</div>발전 공간이 큼<div></div></div></div>
+                    <br>
+                    <div class="skillRow"><span>Oracle</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:38%;text-align: right;line-height: 40px; padding-right:8px">38%</div>발전 공간이 큼<div></div></div></div>
+                    <br>
+                    <div class="skillRow"><span>HTML/CSS/Javascript</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:15%;text-align: right;line-height: 40px; padding-right:8px">15%</div>발전 공간이 아주 큼<div></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 id="portfolio">포트폴리오</h2>
+            <div class="titleUnderLine"></div>
+            <div class="portfolioBox"></div>
+        </div>
+    </div>
+
+    <div class="footContainer">
+        <div class="foot">
+            <a href="https://www.facebook.com/OfficialKimJiWon1/photos/"><img src="facebook-one.svg" ></a>
+            <a href="https://www.instagram.com/geewonii/"><img src="instagramtwo.svg"></a>
+            <a href="https://github.com/"><img src="github.svg" ></a>
+            <a href="https://wx.mail.qq.com/?cancel_login=true&from=get_ticket_fail"><img src="maill-one.svg" ></a>
+        </div>
+    </div>
+
+
+    
+    
+</body>
+</html>
