@@ -174,6 +174,10 @@
             background-color: rgba(194,132,179);
         }
 
+        .developmentPlan{
+            height:fit-content;
+        }
+
         .skillRow {
             display: flex;
             align-items: center; 
@@ -182,9 +186,25 @@
         }
 
         #portfolio{
-
+            margin:auto 200px;
+            padding-bottom: 120px;
 
         }
+
+        .portfolioBox {
+            display: flex;
+            justify-content: center; 
+            gap: 30px;                
+            padding: 20px 0;
+            flex-wrap:wrap;
+            
+        }
+
+        .portfolioBox img { 
+            width: 300px; 
+            height: auto; 
+        }
+
         
 
         .footContainer {
@@ -192,21 +212,57 @@
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
+            font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium', 'Roboto Condensed', 'Arial Narrow', 'Oswald', sans-serif;
         }
 
 
 
         .foot{
-            height:100px;
+            height:150px;
             width: 100%;
             border-top: 1px solid #333;
             background-color: white;
-            display: flex;
-            justify-content: center;
             gap:30px;
             padding-top: 50px;
 
         }
+
+        .contactContainer{
+            margin: 0 auto;
+            width:fit-content;
+        }
+
+        .contactContainer th{
+            height: 24px;
+            width:100px;
+            border-right: 2px solid white;
+        }
+
+
+        .contactContainer td{
+            height: 24px;
+            width:100px;
+            border-right: 2px solid white;
+
+        }
+
+        .contactMeGuideContainer{
+            margin:0 auto;
+            width:fit-content;
+
+        }
+
+        #portfolio button{
+            display:block;
+            margin:0 auto;
+            background-color: black;
+            color:white;
+            padding:5px;
+            cursor: pointer;
+
+        }
+
+        
 
 
         
@@ -217,7 +273,7 @@
     <div class="navbar">
         <div><a href="#aboutMeContainer">나에 대해서</a></div>
         <div><a href="#whatIGot">보유 기술</a></div>
-        <div><a href="#">포트폴리오</a></div>
+        <div><a href="#portfolio">포트폴리오</a></div>
         <div><a href="introduce.html">홈</a></div>
     </div>
     <div id="aboutContainer">
@@ -316,18 +372,68 @@
         </div>
 
         <div>
-            <h2 id="portfolio">포트폴리오</h2>
+            <h2 >포트폴리오</h2>
             <div class="titleUnderLine"></div>
-            <div class="portfolioBox"></div>
+            
+            <div class="portfolioBox" id="portfolio">
+                <div>
+                    <img src="kaximoduosample.jpg">
+                    <button onclick="fnDetail()">자세히</button>
+                </div>
+                <div>
+                    <img src="kaximoduosample.jpg">
+                    <button onclick="fnDetail()">자세히</button>
+                </div>
+                <div>
+                    <img src="kaximoduosample.jpg">
+                    <button onclick="fnDetail()">자세히</button>
+                </div>
+                <div>
+                    <img src="kaximoduosample.jpg">
+                    <button onclick="fnDetail()">자세히</button>
+                </div>
+                <div>
+                    <img src="kaximoduosample.jpg">
+                    <button onclick="fnDetail()">자세히</button>
+                </div>
+                <div>
+                    <img src="kaximoduosample.jpg">
+                    <button onclick="fnDetail()">자세히</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="footContainer">
         <div class="foot">
-            <a href="https://www.facebook.com/OfficialKimJiWon1/photos/"><img src="facebook-one.svg" ></a>
-            <a href="https://www.instagram.com/geewonii/"><img src="instagramtwo.svg"></a>
-            <span><img src="github.svg" >:li331893<span>
-            <span><img src="maill-one.svg" >:elle199802@gmail.com</span>
+
+            <div class="contactMeGuideContainer">
+            <div style="color:#333;font-weight:bold;font-size:20px;">Contact Me</div>
+            </div>
+
+            <div class="contactContainer">
+
+
+                <table>
+                    <tr>
+                        <th><img src="facebook-one.svg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;facebook</th>
+                        <td><a href="https://www.facebook.com/OfficialKimJiWon1/photos/">ElleLi</a></td>
+                    </tr>
+                    <tr>
+                        <th><img src="instagramtwo.svg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instagram</th>
+                        <td><a href="https://www.instagram.com/geewonii/">ElleLi</a></td>
+                    </tr>
+                    <tr>
+                        <th><img src="github.svg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;github</th>
+                        <td><span>li331893</span></td>
+                    </tr>
+                    <tr>
+                        <th><img src="maill-one.svg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email</th>
+                        <td><span>elle199802@gmail.com</span></td>
+                    </tr>
+                </table>
+
+            </div>
         </div>
     </div>
 
@@ -335,5 +441,13 @@
     
     
 </body>
-
 </html>
+
+<script>
+    function fnDetail(){
+        let top = (screen.availHeight-800) / 2;
+        let left = (screen.availWidth-600) / 2;
+        window.open("viewdetail.html", "자세히", `width=1000, height=600, left=${left}, top=${top}`);
+    }
+    
+</script>
