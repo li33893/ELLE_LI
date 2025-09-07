@@ -9,6 +9,7 @@
             margin:0;
             padding:0;
             color:#333;
+             font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium', 'Roboto Condensed', 'Arial Narrow', 'Oswald', sans-serif;
         }
 
 
@@ -150,7 +151,8 @@
             width: 500px;
             height:250px;
 
-            background-color:rgba(194,132,179,0.5);
+            border-left: 10px solid black;
+            background-color:rgba(194,132,179,0.4);
             box-shadow: 3px 3px 3px #8a8989;
 
         }
@@ -196,7 +198,6 @@
         }
 
         #portfolio{
-            margin:auto 200px;
             padding-bottom: 120px;
 
         }
@@ -207,6 +208,8 @@
             gap: 30px;                
             padding: 20px 0;
             flex-wrap:wrap;
+            max-width: 1000px;
+            margin:0 auto;
             
         }
 
@@ -272,6 +275,10 @@
 
         }
 
+        #rec{
+
+        }
+
         
         .recAllContainer{
             margin: 60px auto;
@@ -287,15 +294,21 @@
             width:600px;
             height:800px;
             position: relative; 
-            border-right: 10px solid #c9c9c9;
+            border-right: 10px double rgb(179, 176, 176);
+            ;
             
         }
 
         .playlistContainer{
             width:500px;
             height:800px;
-            background-color: whitesmoke;
+            background-color: rgba(194,132,179,0.2);
+            padding-top:50px;
+            padding-left: 50px;
+            line-height: 40px;
+            font-size: 20px;
         }
+
 
         .tableContainer{
             display: flex; 
@@ -393,7 +406,7 @@
             position: absolute;
             bottom: 550px;
             left:-120px;
-            color:#396993;
+            color:#999797;
             font-weight: bold;
 
 
@@ -412,6 +425,7 @@
         <div><a href="#aboutMeContainer">나에 대해서</a></div>
         <div><a href="#whatIGot">보유 기술</a></div>
         <div><a href="#portfolio">포트폴리오</a></div>
+        <div><a href="#rec">개인 추천</a></div>
         <div><a href="introduce.html">홈</a></div>
     </div>
 
@@ -559,12 +573,32 @@
     </div>
 
 
-    <h2 >개인 추천</h2>
+    <h2 id="rec">개인 추천</h2>
         <div class="titleUnderLine"></div>
 
 
         <div class="recAllContainer">
-            <div class="playlistContainer"></div>
+            <div class="playlistContainer">
+                <h3 style="font-weight: bold;">| 음악 추천</h3>
+                <div style="font-weight:bold">▶슬플 때</div>
+                <div>♪&nbspchampagne problems &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspTaylor Swift</div>
+                <br>
+                <div style="font-weight:bold">▶게임할 때</div>
+                <div>♪&nbspla gloire à mes genoux &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspCôme</div>
+                <br>
+                <div style="font-weight:bold">▶여행갈 때</div>
+                <div>♪&nbsp寻 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp华晨宇</div>
+                <br>
+                <div style="font-weight:bold">▶스트레스 해소</div>
+                <div>♪&nbspinvisible string &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspTaylor Swift</div>
+                <div>♪&nbsphere we are &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp华晨宇</div>
+                <br>
+                <div style="font-weight:bold">▶공부할 때</div>
+                <div>♪&nbsp芳草地 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp陈粒</div>
+                <div>♪&nbspホールウェイ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp松たか子</div>
+
+
+            </div>
             <div class="recContainer">
             
                 <div class="absIsWorse">여기에 있는 추천는 부평을 중심으로 했습니다. <br> #그림을 클릭하세요~#</div>
@@ -582,12 +616,12 @@
                 </div>
                 <div class="deliListContainer">
 
-                    <div id="spicyl">01 <span>마라</span></div>
-                    <div id="coldl">02 <span>주식</span></div>
-                    <div id="stomachl">03 <span>무침</span></div>
-                    <div id="drinkl">04 <span>drink</span></div>
-                    <div id="meatl">05 <span>고기/구이</span></div>
-                    <div id="noodlel">06 <span>즉석</span></div>
+                    <div id="spicyl">01 <span style="color:#999797">마라</span></div>
+                    <div id="coldl">02 <span style="color:#999797">주식</span></div>
+                    <div id="stomachl">03 <span style="color:#999797">무침</span></div>
+                    <div id="drinkl">04 <span style="color:#999797">drink</span></div>
+                    <div id="meatl">05 <span style="color:#999797">고기/구이</span></div>
+                    <div id="noodlel">06 <span style="color:#999797">즉석</span></div>
 
 
                 </div>
