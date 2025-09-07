@@ -11,9 +11,6 @@
             color:#333;
         }
 
-        body{
-            margin:auto 0;
-        }
 
         .navbar{
             position: fixed;
@@ -77,18 +74,21 @@
         }
 
         .aboutMeContainer{
-            display: flex;        
-            gap: 20px;          
-            min-height: 600px;   
+            margin: 60px auto;
+            display: flex;
+            width: fit-content;
+            justify-content: center;
+            gap: 40px;   
 
         }
 
         h2{
             font-size: 42px;
             font-weight: 300;
-            color:#333;
-            display:block;
-            padding:50px 0 50px 50px;
+            color: black;
+            text-align: center;
+            padding: 50px 0;
+            margin: 0 auto;
         }
 
         h3{
@@ -105,12 +105,6 @@
             background-color: rgb(224, 221, 221);
             height:0.5px;
             
-        }
-
-        .personalInfoBox{
-            display:block;
-            width:620px;
-            height:400px;
         }
 
 
@@ -141,14 +135,24 @@
 
 
         #whatIGot{
-            clear: both;
 
         }
 
         .whatIGotContainer{
-            margin-top: 40px;
-            margin-left:80px;
+            margin: 60px auto;
             display: flex;
+            width: fit-content;
+            gap: 40px; 
+        }
+
+        .projContainer{
+
+            width: 500px;
+            height:250px;
+
+            background-color:rgba(194,132,179,0.5);
+            box-shadow: 3px 3px 3px #8a8989;
+
         }
 
         .whatIGot{
@@ -395,16 +399,7 @@
 
         }
 
-        .projContainer{
-
-            width: 500px;
-            height:250px;
-
-            background-color:rgba(194,132,179,0.5);
-            box-shadow: 3px 3px 3px #8a8989;
-            margin:10px 115px;
-
-        }
+        
 
 
         
@@ -427,7 +422,6 @@
         <div class="titleUnderLine"></div>
         <div class="aboutMeContainer">
             <div class="tableContainer">
-                <div class="personalInfoBox" >
                     <h3>인적사항</h3>
                     <table>
                         <tr>
@@ -457,9 +451,8 @@
                         
                     </table>
 
-                </div>
 
-                <div class="personalityBox">
+                
                     <h3>인성사항</h3>
                     <div>
                         <table>
@@ -500,7 +493,7 @@
                             </tr>
                         </table>
 
-                    </div>
+                    
                 
                 </div> 
 
