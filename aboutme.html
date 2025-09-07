@@ -20,9 +20,9 @@
             left: 0;
             right: 0;
             background: white;
-            border-bottom: 0.5px solid black;
             z-index: 1000;
             padding: 15px 0;
+            box-shadow: 2px 2px 2px #dad9d9;
         }
 
 
@@ -69,11 +69,14 @@
 
         #aboutMeContainer{
 
+
         }
 
         .aboutMeContainer{
+            display: flex;        
+            gap: 20px;          
+            min-height: 600px;   
 
-            margin:0 auto;
         }
 
         h2{
@@ -87,7 +90,7 @@
         h3{
             font-size: 30px;
             font-weight: 300;
-            color:black;
+            color:#333;
             display:block;
             padding:30px 0 40px 30px;
             font-weight:200;
@@ -95,16 +98,18 @@
         }
 
         .titleUnderLine{
-            background-color: #333;
+            background-color: rgb(224, 221, 221);
             height:0.5px;
             
         }
 
         .personalInfoBox{
-            width:1000px;
-            height:fit-content;
-            margin:50px;
+            display:block;
+            width:620px;
+            height:400px;
         }
+
+
 
         table,th{
             border-right: 2px solid rgba(194,132,179);
@@ -130,19 +135,16 @@
             list-style-type: none;
         }
 
-        .personalityBox{
-            width:1000px;
-            height:fit-content;
-            margin:50px;          
-        }
 
         #whatIGot{
+            clear: both;
 
         }
 
         .whatIGotContainer{
             margin-top: 40px;
             margin-left:80px;
+            display: flex;
         }
 
         .whatIGot{
@@ -262,7 +264,128 @@
 
         }
 
-        
+
+        .recContainer{
+            width:600px;
+            height:800px;
+            margin-top: 80px;
+            position: relative; 
+            border-right: 10px solid #c9c9c9;
+            
+        }
+
+        .tableContainer{
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px;
+        }
+
+        .recContainer h2{
+            font-weight: 900;
+            color:#999797;
+            transform: rotate(-90deg);
+            position: absolute; 
+            left: -90px;   
+            bottom: 140px; 
+            padding: 0;   
+        }
+
+        .reclineVer{
+            width:1px;
+            height:750px;
+            position:absolute;
+            bottom:20px;
+            left: 120px;
+            background-color: #dcdcdc;
+            
+        }
+
+        .reclineHor{
+            width:550px;
+            height:1px;
+            position:absolute;
+            bottom:370px;
+            left: 20px;
+            background-color: #dcdcdc;
+            
+        }
+
+        .deliTable{
+            width:400px;
+            height:400px;
+            position:absolute;
+            right:40px;
+            bottom: 370px;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-rows: 1fr 1fr 1fr; 
+            gap: 10px;
+            
+        }
+
+        .deliTable img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            cursor: pointer;
+        }
+
+
+        .deliListContainer{
+            width:400px;
+            height:330px;
+            position:absolute;
+            right:40px;
+            bottom: 20px;
+            display:grid;
+
+        }
+
+        .deliListContainer div{
+
+            font-size: 30px;
+            color:  rgba(194,132,179,0.47);
+            font-weight: bold;
+
+        }
+
+        .delItem{
+            position: relative;
+        }
+
+        .delItem div{
+            font-size: 30px;
+            color:  rgba(131, 129, 129, 0.69);
+            font-weight: bold;
+            position: absolute;
+            bottom:1px;
+            right:1px;
+
+
+        }
+
+        .absIsWorse{
+            font-size: 10px;
+            transform: rotate(-90deg);
+            position: absolute;
+            bottom: 550px;
+            left:-140px;
+            color:#396993;
+            font-weight: bold;
+
+
+        }
+
+        .projContainer{
+
+            width: 500px;
+            height:250px;
+
+            background-color:rgba(194,132,179,0.5);
+            box-shadow: 3px 3px 3px #8a8989;
+            margin:10px 115px;
+
+        }
 
 
         
@@ -270,93 +393,136 @@
     </style>
 </head>
 <body>
+    <!-- 네이버바 -->
     <div class="navbar">
         <div><a href="#aboutMeContainer">나에 대해서</a></div>
         <div><a href="#whatIGot">보유 기술</a></div>
         <div><a href="#portfolio">포트폴리오</a></div>
         <div><a href="introduce.html">홈</a></div>
     </div>
+
+
+    <!-- 나에대해서 -->
     <div id="aboutContainer">
         <h2 style="padding-top:100px" id="aboutMeContainer">나에 대해서</h2>
         <div class="titleUnderLine"></div>
         <div class="aboutMeContainer">
-            <div class="personalInfoBox" >
-                <h3>인적사항</h3>
-                <table>
-                    <tr>
-                        <th>이름</th>
-                        <td>LI MEILING</td>
-                    </tr>
-
-                    <tr>
-                        <th>국적</th>
-                        <td>중국</td>
-                    </tr>
-
-                    <tr>
-                        <th>출생년/월/일</th>
-                        <td>1998/02/19</td>
-                    </tr>
-
-                    <tr>
-                        <th>학력사항</th>
-                        <td>
-                            <ul>
-                                <li>2020: China University of Whatever 졸업, whatever 전공</li>
-                                <li>2025: 아무거나 대학 수료, 아무거나 전공</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    
-                </table>
-
-            </div>
-
-            <div class="personalityBox">
-                <h3>인성사항</h3>
-                <div>
+            <div class="tableContainer">
+                <div class="personalInfoBox" >
+                    <h3>인적사항</h3>
                     <table>
                         <tr>
-                            <th>취미</th>
-                            <td>프로그래밍
-                                <br>
-                                노래방에 가서 배경 음악에 따라 가사 읊는 것
-                                <br>
-                                쓸모없는 일들을 찾아서 인생 낭비하는 것
-                                <br>
-                                멍 떼리기
-                            </td>
+                            <th>이름</th>
+                            <td>LI MEILING</td>
                         </tr>
 
                         <tr>
-                            <th>인성특징</th>
-                            <td>
-                            웃음의 문턱이 낮고 한 번 빵 터지기 시작하면 그치기가 힘듬
-                            <br>
-                            완벽주의+디테일에 집착
-                            <br>
-                            뭐든지 다 잘 잊어버림
-                            <br>
-                            느---------릿--------느--------릿
-                            </td>
+                            <th>국적</th>
+                            <td>중국</td>
                         </tr>
 
                         <tr>
-                            <th>강점</th>
+                            <th>출생년/월/일</th>
+                            <td>1998/02/19</td>
+                        </tr>
+
+                        <tr>
+                            <th>학력사항</th>
                             <td>
-                            착하고 정직
-                            <br>
-                            끈질김
+                                <ul>
+                                    <li>2020: China University of Whatever 졸업, whatever 전공</li>
+                                    <li>2025: 아무거나 대학 수료, 아무거나 전공</li>
+                                </ul>
                             </td>
                         </tr>
+                        
                     </table>
+
                 </div>
-            </div>    
+
+                <div class="personalityBox">
+                    <h3>인성사항</h3>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>취미</th>
+                                <td>프로그래밍
+                                    <br>
+                                    노래방에 가서 배경 음악에 따라 가사 읊는 것
+                                    <br>
+                                    쓸모없는 일들을 찾아서 인생 낭비하는 것
+                                    <br>
+                                    멍 떼리기
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>인성특징</th>
+                                <td>
+                                웃음의 문턱이 낮고 한 번 빵 터지기 시작하면 그치기가 힘듬
+                                <br>
+                                완벽주의+디테일에 집착
+                                <br>
+                                뭐든지 다 잘 잊어버림
+                                <br>
+                                느---------릿--------느--------릿
+                                <br>
+                                MBTI:POOR
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>강점</th>
+                                <td>
+                                착하고 정직
+                                <br>
+                                끈질김
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                
+                </div> 
+
+            </div> 
+
+            
+            <!-- 음식추천 -->
+            <div class="recContainer">
+                <div class="absIsWorse">자기 소개와 아무런 관계가 없지만 비어있는 것이 너무도 보기 싫어서 일부러 넣었습니다. <br>여기에 있는 추천는 부평을 중심으로 했습니다. <br> #그림을 클릭하세요~#</div>
+                <h2>중국 <span style="background-color: rgba(194,132,179,0.47);">먹거리</span> 추천</h2>
+                <div class="reclineVer"></div>
+                <div class="reclineHor"></div>
+                <div class="deliTable">
+                    <div class="delItem"><img id="spicy" src="spicy.jpg" onclick="fnspicy()"><div>01</div></div>
+                    <div class="delItem"><img id="cold" src="cold.webp " onclick="fncold()"><div>02</div></div>
+                    <div class="delItem"><img id="stomach" src="stomach.webp" onclick="fnstomach()"><div>03</div></div>
+                    <div class="delItem"><img id="drink" src="drink.jpg" onclick="fndrink()"><div>04</div></div>
+                    <div class="delItem"><img id="meat" src="meat.webp" onclick="fnmeat()"><div>05</div></div>
+                    <div class="delItem"><img id="noodle" src="noodle.webp" onclick="fnnoodle()"><div>06</div></div>
+
+                </div>
+                <div class="deliListContainer">
+
+                    <div id="spicyl">01 <span>마라</span></div>
+                    <div id="coldl">02 <span>주식</span></div>
+                    <div id="stomachl">03 <span>무침</span></div>
+                    <div id="drinkl">04 <span>drink</span></div>
+                    <div id="meatl">05 <span>고기/구이</span></div>
+                    <div id="noodlel">06 <span>즉석</span></div>
+
+
+                </div>
+            </div>
+
+             
         </div>
 
-
-        <div>
-            <h2 id="whatIGot">보유 기술</h2>
+        
+        <!-- 보유기술 -->
+        <div id="whatIGot">
+            <h2>보유 기술</h2>
             <div class="titleUnderLine"></div>
             <div class="whatIGotContainer">
                 <div class="whatIGot">
@@ -368,9 +534,15 @@
                     <br>
                     <div class="skillRow"><span>HTML/CSS/Javascript</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:15%;text-align: right;line-height: 40px; padding-right:8px">15%</div>발전 공간이 아주 큼<div></div></div></div>
                 </div>
+
+                <div class="projContainer">
+                    <h3 style="font-weight: bold; color:white">| Projects</h3>
+                    <div style="padding-left:30px;color:white">▶&nbsp;&nbsp;08.21-&nbsp;&nbsp;&nbsp;&nbsp;자기 소개 페이지&nbsp;&nbsp;&nbsp;&nbsp;<span id="text">ongoing</span></div>
+                </div>
             </div>
         </div>
 
+        <!-- 포트폴리오 -->
         <div>
             <h2 >포트폴리오</h2>
             <div class="titleUnderLine"></div>
@@ -404,6 +576,7 @@
         </div>
     </div>
 
+    <!-- footer -->
     <div class="footContainer">
         <div class="foot">
 
@@ -444,11 +617,176 @@
 </html>
 
 <script>
+    //포트폴리오 자세히의 팝압 효과
     function fnDetail(){
         let top = (screen.availHeight-600) / 2;
         let left = (screen.availWidth-1000) / 2;
         window.open("viewdetail.html", "자세히", `width=1000, height=600, left=${left}, top=${top}`);
     }
+
+
+    //음식추천의 팝압 효과
+
+    function fnspicy(){
+        let top = (screen.availHeight-600) / 2;
+        let left = (screen.availWidth-1000) / 2;
+        window.open("spicy.html", "마라 추천", `width=1000, height=600, left=${left}, top=${top}`);
+    }
+
+    function fncold(){
+        let top = (screen.availHeight-600) / 2;
+        let left = (screen.availWidth-1000) / 2;
+        window.open("cold.html", "주식 추천", `width=1000, height=600, left=${left}, top=${top}`);
+    }
+
+    function fnstomach(){
+        let top = (screen.availHeight-600) / 2;
+        let left = (screen.availWidth-1000) / 2;
+        window.open("stomach.html", "무침 추천", `width=1000, height=600, left=${left}, top=${top}`);
+    }
+
+    function fndrink(){
+        let top = (screen.availHeight-600) / 2;
+        let left = (screen.availWidth-1000) / 2;
+        window.open("drink.html", "드링크 추천", `width=1000, height=600, left=${left}, top=${top}`);
+    }
+
+    function fnmeat(){
+        let top = (screen.availHeight-600) / 2;
+        let left = (screen.availWidth-1000) / 2;
+        window.open("meat.html", "고기/구이 추천", `width=1000, height=600, left=${left}, top=${top}`);
+    }
+
+    function fnnoodle(){
+        let top = (screen.availHeight-600) / 2;
+        let left = (screen.availWidth-1000) / 2;
+        window.open("noodle.html", "즉석 음식 추천", `width=1000, height=600, left=${left}, top=${top}`);
+
+    }
+
+
+
+    //음식추천의 선택시 효과
+    let img = document.querySelector("#spicy");
+
+    img.addEventListener("mouseover",()=>{
+        img.src="spicy.jpg";
+        img.style="opacity:0.65;box-shadow:3px 3px 3px #333";  
+        document.querySelector("#spicyl").style.backgroundColor = "whitesmoke";  
+        
+    });
+
+    img.addEventListener("mouseout",()=>{
+        img.src="spicy.jpg"; 
+        img.style="opacity:1;box-shadow:none";
+        document.querySelector("#spicyl").style.backgroundColor = "white";
+    });
+
+
+
+    let img2 = document.querySelector("#cold");
+
+    img2.addEventListener("mouseover",()=>{
+        img2.src="cold.webp";
+        img2.style="opacity:0.65;box-shadow:3px 3px 3px #333";
+        document.querySelector("#coldl").style.backgroundColor = "whitesmoke"; 
+        
+    });
+
+    img2.addEventListener("mouseout",()=>{
+        img2.src="cold.webp"; 
+        img2.style="opacity:1;box-shadow:none";
+        document.querySelector("#coldl").style.backgroundColor = "white"; 
+    });
+
+
+    
+    let img3 = document.querySelector("#meat");
+
+    img3.addEventListener("mouseover",()=>{
+        img3.src="meat.webp";
+        img3.style="opacity:0.65;box-shadow:3px 3px 3px #333";
+        document.querySelector("#meatl").style.backgroundColor = "whitesmoke"; 
+        
+    });
+
+    img3.addEventListener("mouseout",()=>{
+        img3.src="meat.webp"; 
+        img3.style="opacity:1;box-shadow:none";
+        document.querySelector("#meatl").style.backgroundColor = "white"; 
+    });
+
+
+
+
+    let img4 = document.querySelector("#drink");
+
+    img4.addEventListener("mouseover",()=>{
+        img4.src="drink.jpg";
+        img4.style="opacity:0.65;box-shadow:3px 3px 3px #333";
+        document.querySelector("#drinkl").style.backgroundColor = "whitesmoke"; 
+        
+    });
+
+    img4.addEventListener("mouseout",()=>{
+        img4.src="drink.jpg"; 
+        img4.style="opacity:1;box-shadow:none";
+        document.querySelector("#drinkl").style.backgroundColor = "white"; 
+    });
+
+
+
+    let img5 = document.querySelector("#noodle");
+
+    img5.addEventListener("mouseover",()=>{
+        img5.src="noodle.webp";
+        img5.style="opacity:0.65;box-shadow:3px 3px 3px #333";
+        document.querySelector("#noodlel").style.backgroundColor = "whitesmoke"; 
+        
+    });
+
+    img5.addEventListener("mouseout",()=>{
+        img5.src="noodle.webp"; 
+        img5.style="opacity:1;box-shadow:none";
+        document.querySelector("#noodlel").style.backgroundColor = "white"; 
+    });
+
+
+    let img6 = document.querySelector("#stomach");
+
+    img6.addEventListener("mouseover",()=>{
+        img6.src="stomach.webp";
+        img6.style="opacity:0.65;box-shadow:3px 3px 3px #333";
+        document.querySelector("#stomachl").style.backgroundColor = "whitesmoke"; 
+        
+    });
+
+    img6.addEventListener("mouseout",()=>{
+        img6.src="stomach.webp"; 
+        img6.style="opacity:1;box-shadow:none";
+        document.querySelector("#stomachl").style.backgroundColor = "white"; 
+    });
+
+
+    //ongoing효과
+    let content = "ongoing_";
+    text = document.querySelector("#text");
+    let i = 0;
+
+    let func = setInterval(() => {
+        text.innerHTML += content.charAt(i++);
+        if (i >= content.length) {
+            setTimeout(() => {
+                text.innerHTML = "";
+                i = 0;
+            }, 800);
+        }
+    }, 180);
+
+
+
+
+    
+    
     
 </script>
-
