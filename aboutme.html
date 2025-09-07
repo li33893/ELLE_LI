@@ -11,6 +11,10 @@
             color:#333;
         }
 
+        body{
+            margin:auto 0;
+        }
+
         .navbar{
             position: fixed;
             display:flex;
@@ -62,7 +66,7 @@
         }
 
         #aboutContainer{
-            margin:auto 200px;
+            margin:0 auto;
             font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium', 'Roboto Condensed', 'Arial Narrow', 'Oswald', sans-serif;         
 
         }
@@ -73,7 +77,9 @@
         }
 
         .aboutMeContainer{
-            margin:auto auto; 
+            display: flex;        
+            gap: 20px;          
+            min-height: 600px;   
 
         }
 
@@ -262,14 +268,29 @@
 
         }
 
+        
+        .recAllContainer{
+            margin: 60px auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px 60px; 
+        }
+        
+
 
         .recContainer{
+            margin-left: 40px;
             width:600px;
             height:800px;
-            margin-top: 80px;
             position: relative; 
             border-right: 10px solid #c9c9c9;
             
+        }
+
+        .playlistContainer{
+            width:500px;
+            height:800px;
+            background-color: whitesmoke;
         }
 
         .tableContainer{
@@ -363,11 +384,11 @@
         }
 
         .absIsWorse{
-            font-size: 10px;
+            font-size: 20px;
             transform: rotate(-90deg);
             position: absolute;
             bottom: 550px;
-            left:-140px;
+            left:-120px;
             color:#396993;
             font-weight: bold;
 
@@ -400,7 +421,7 @@
     </div>
 
 
-    <!-- 나에대해서 -->
+    
     <div id="aboutContainer">
         <h2 style="padding-top:100px" id="aboutMeContainer">나에 대해서</h2>
         <div class="titleUnderLine"></div>
@@ -485,40 +506,11 @@
 
             </div> 
 
-            
-            <!-- 음식추천 -->
-            <div class="recContainer">
-                <div class="absIsWorse">자기 소개와 아무런 관계가 없지만 비어있는 것이 너무도 보기 싫어서 일부러 넣었습니다. <br>여기에 있는 추천는 부평을 중심으로 했습니다. <br> #그림을 클릭하세요~#</div>
-                <h2>중국 <span style="background-color: rgba(194,132,179,0.47);">먹거리</span> 추천</h2>
-                <div class="reclineVer"></div>
-                <div class="reclineHor"></div>
-                <div class="deliTable">
-                    <div class="delItem"><img id="spicy" src="spicy.jpg" onclick="fnspicy()"><div>01</div></div>
-                    <div class="delItem"><img id="cold" src="cold.webp " onclick="fncold()"><div>02</div></div>
-                    <div class="delItem"><img id="stomach" src="stomach.webp" onclick="fnstomach()"><div>03</div></div>
-                    <div class="delItem"><img id="drink" src="drink.jpg" onclick="fndrink()"><div>04</div></div>
-                    <div class="delItem"><img id="meat" src="meat.webp" onclick="fnmeat()"><div>05</div></div>
-                    <div class="delItem"><img id="noodle" src="noodle.webp" onclick="fnnoodle()"><div>06</div></div>
-
-                </div>
-                <div class="deliListContainer">
-
-                    <div id="spicyl">01 <span>마라</span></div>
-                    <div id="coldl">02 <span>주식</span></div>
-                    <div id="stomachl">03 <span>무침</span></div>
-                    <div id="drinkl">04 <span>drink</span></div>
-                    <div id="meatl">05 <span>고기/구이</span></div>
-                    <div id="noodlel">06 <span>즉석</span></div>
-
-
-                </div>
-            </div>
-
              
         </div>
 
         
-        <!-- 보유기술 -->
+
         <div id="whatIGot">
             <h2>보유 기술</h2>
             <div class="titleUnderLine"></div>
@@ -540,7 +532,6 @@
             </div>
         </div>
 
-        <!-- 포트폴리오 -->
         <div>
             <h2 >포트폴리오</h2>
             <div class="titleUnderLine"></div>
@@ -571,10 +562,46 @@
                     <button onclick="fnDetail()">자세히</button>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 
-    <!-- footer -->
+
+    <h2 >개인 추천</h2>
+        <div class="titleUnderLine"></div>
+
+
+        <div class="recAllContainer">
+            <div class="playlistContainer"></div>
+            <div class="recContainer">
+            
+                <div class="absIsWorse">여기에 있는 추천는 부평을 중심으로 했습니다. <br> #그림을 클릭하세요~#</div>
+                <h2>중국 <span style="background-color: rgba(194,132,179,0.47);">먹거리</span> 추천</h2>
+                <div class="reclineVer"></div>
+                <div class="reclineHor"></div>
+                <div class="deliTable">
+                    <div class="delItem"><img id="spicy" src="spicy.jpg" onclick="fnspicy()"><div>01</div></div>
+                    <div class="delItem"><img id="cold" src="cold.webp " onclick="fncold()"><div>02</div></div>
+                    <div class="delItem"><img id="stomach" src="stomach.webp" onclick="fnstomach()"><div>03</div></div>
+                    <div class="delItem"><img id="drink" src="drink.jpg" onclick="fndrink()"><div>04</div></div>
+                    <div class="delItem"><img id="meat" src="meat.webp" onclick="fnmeat()"><div>05</div></div>
+                    <div class="delItem"><img id="noodle" src="noodle.webp" onclick="fnnoodle()"><div>06</div></div>
+
+                </div>
+                <div class="deliListContainer">
+
+                    <div id="spicyl">01 <span>마라</span></div>
+                    <div id="coldl">02 <span>주식</span></div>
+                    <div id="stomachl">03 <span>무침</span></div>
+                    <div id="drinkl">04 <span>drink</span></div>
+                    <div id="meatl">05 <span>고기/구이</span></div>
+                    <div id="noodlel">06 <span>즉석</span></div>
+
+
+                </div>
+            </div>
+        </div>
+
+
     <div class="footContainer">
         <div class="foot">
 
@@ -583,7 +610,7 @@
             </div>
 
             <div class="contactContainer">
-
+                
 
                 <table>
                     <tr>
