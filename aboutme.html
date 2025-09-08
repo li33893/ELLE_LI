@@ -432,7 +432,7 @@
     </div>
 
 
-    <!-- 나에 대해서 부분 -->
+    
     <div id="aboutContainer">
         <h2 style="padding-top:100px" id="aboutMeContainer">나에 대해서</h2>
         <div class="titleUnderLine"></div>
@@ -507,18 +507,19 @@
                                 끈질김
                                 </td>
                             </tr>
-                        </table>                  
+                        </table>
+
+                    
                 
                 </div> 
 
             </div> 
+
              
         </div>
 
         
 
-
-        <!-- 보유 기술 부분 -->
         <div id="whatIGot">
             <h2>보유 기술</h2>
             <div class="titleUnderLine"></div>
@@ -539,11 +540,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-        <!-- 포트폴리오 부분 -->
 
         <div>
             <h2 id="por">포트폴리오</h2>
@@ -579,13 +575,6 @@
     </div>
 
 
-
-
-
-
-
-     <!--개인 추천 부분 -->
-    
     <h2 id="rec">개인 추천</h2>
         <div class="titleUnderLine"></div>
 
@@ -619,12 +608,12 @@
                 <div class="reclineVer"></div>
                 <div class="reclineHor"></div>
                 <div class="deliTable">
-                    <div class="delItem"><img id="spicy" src="spicy.jpg" onclick="fnspicy()"><div>01</div></div>
-                    <div class="delItem"><img id="cold" src="cold.webp " onclick="fncold()"><div>02</div></div>
-                    <div class="delItem"><img id="stomach" src="stomach.webp" onclick="fnstomach()"><div>03</div></div>
-                    <div class="delItem"><img id="drink" src="drink.jpg" onclick="fndrink()"><div>04</div></div>
-                    <div class="delItem"><img id="meat" src="meat.webp" onclick="fnmeat()"><div>05</div></div>
-                    <div class="delItem"><img id="noodle" src="noodle.webp" onclick="fnnoodle()"><div>06</div></div>
+                    <div class="delItem"><img id="spicy" src="spicy.jpg" onclick="fnpopUp(id)" ><div>01</div></div>
+                    <div class="delItem"><img id="cold" src="cold.webp " onclick="fnpopUp(id)"><div>02</div></div>
+                    <div class="delItem"><img id="stomach" src="stomach.webp" onclick="fnpopUp(id)"><div>03</div></div>
+                    <div class="delItem"><img id="drink" src="drink.jpg" onclick="fnpopUp(id)"><div>04</div></div>
+                    <div class="delItem"><img id="meat" src="meat.webp" onclick="fnpopUp(id)"><div>05</div></div>
+                    <div class="delItem"><img id="noodle" src="noodle.webp" onclick="fnpopUp(id)"><div>06</div></div>
 
                 </div>
                 <div class="deliListContainer">
@@ -642,10 +631,6 @@
         </div>
 
 
-
-
-
-     <!-- footer 부분 -->
     <div class="footContainer">
         <div class="foot">
 
@@ -694,147 +679,64 @@
     }
 
 
+
     //음식추천의 팝압 효과
 
-    function fnspicy(){
+    let popUpList=[
+        {id:"spicy", name:"마라 추천"},
+        {id:"cold", name:"주식 추천"},
+        {id:"meat", name:"무침 추천"},
+        {id:"drink", name:"드링크 추천"},
+        {id:"noodle", name:"고기/구이 추천"},
+        {id:"stomach", name:"즉석 음식 추천"}
+    ]
+
+    function fnpopUp(id){
         let top = (screen.availHeight-600) / 2;
         let left = (screen.availWidth-1000) / 2;
-        window.open("spicy.html", "마라 추천", `width=1000, height=600, left=${left}, top=${top}`);
+        window.open(`${id}.html`, name, `width=1000, height=600, left=${left}, top=${top}`);
     }
 
-    function fncold(){
-        let top = (screen.availHeight-600) / 2;
-        let left = (screen.availWidth-1000) / 2;
-        window.open("cold.html", "주식 추천", `width=1000, height=600, left=${left}, top=${top}`);
-    }
-
-    function fnstomach(){
-        let top = (screen.availHeight-600) / 2;
-        let left = (screen.availWidth-1000) / 2;
-        window.open("stomach.html", "무침 추천", `width=1000, height=600, left=${left}, top=${top}`);
-    }
-
-    function fndrink(){
-        let top = (screen.availHeight-600) / 2;
-        let left = (screen.availWidth-1000) / 2;
-        window.open("drink.html", "드링크 추천", `width=1000, height=600, left=${left}, top=${top}`);
-    }
-
-    function fnmeat(){
-        let top = (screen.availHeight-600) / 2;
-        let left = (screen.availWidth-1000) / 2;
-        window.open("meat.html", "고기/구이 추천", `width=1000, height=600, left=${left}, top=${top}`);
-    }
-
-    function fnnoodle(){
-        let top = (screen.availHeight-600) / 2;
-        let left = (screen.availWidth-1000) / 2;
-        window.open("noodle.html", "즉석 음식 추천", `width=1000, height=600, left=${left}, top=${top}`);
-
-    }
+    
 
 
 
     //음식추천의 선택시 효과
-    let img = document.querySelector("#spicy");
+    let foodList=[
+        {id:"spicy", src:"spicy.jpg"},
+        {id:"cold", src:"cold.webp"},
+        {id:"meat", src:"meat.webp"},
+        {id:"drink", src:"drink.jpg"},
+        {id:"noodle", src:"noodle.webp"},
+        {id:"stomach", src:"stomach.webp"}
+    ]
 
-    img.addEventListener("mouseover",()=>{
-        img.src="spicy.jpg";
-        img.style="opacity:0.65;box-shadow:3px 3px 3px #333";  
-        document.querySelector("#spicyl").style.backgroundColor = "whitesmoke";  
+    function fnFood(id,src){
+        let img=document.querySelector(`#${id}`);
         
-    });
-
-    img.addEventListener("mouseout",()=>{
-        img.src="spicy.jpg"; 
-        img.style="opacity:1;box-shadow:none";
-        document.querySelector("#spicyl").style.backgroundColor = "white";
-    });
-
+        img.addEventListener("mouseover",()=>{
+            img.src=src;
+            img.style.opacity=0.65;
+            img.style.boxShadow="3px 3px 3px #333";
+            document.querySelector(`#${id}l`).style.backgroundColor="whitesmoke";
+        });
 
 
-    let img2 = document.querySelector("#cold");
-
-    img2.addEventListener("mouseover",()=>{
-        img2.src="cold.webp";
-        img2.style="opacity:0.65;box-shadow:3px 3px 3px #333";
-        document.querySelector("#coldl").style.backgroundColor = "whitesmoke"; 
+        img.addEventListener("mouseout",()=>{
+            img.src=src;
+            img.style.opacity=1;
+            img.style.boxShadow="none";
+            document.querySelector(`#${id}l`).style.backgroundColor="white";
+        });    
         
-    });
+    }
 
-    img2.addEventListener("mouseout",()=>{
-        img2.src="cold.webp"; 
-        img2.style="opacity:1;box-shadow:none";
-        document.querySelector("#coldl").style.backgroundColor = "white"; 
-    });
-
-
-    
-    let img3 = document.querySelector("#meat");
-
-    img3.addEventListener("mouseover",()=>{
-        img3.src="meat.webp";
-        img3.style="opacity:0.65;box-shadow:3px 3px 3px #333";
-        document.querySelector("#meatl").style.backgroundColor = "whitesmoke"; 
-        
-    });
-
-    img3.addEventListener("mouseout",()=>{
-        img3.src="meat.webp"; 
-        img3.style="opacity:1;box-shadow:none";
-        document.querySelector("#meatl").style.backgroundColor = "white"; 
-    });
+    for(let i=0; i<foodList.length; i++){
+        fnFood(foodList[i].id, foodList[i].src);
+    }
 
 
 
-
-    let img4 = document.querySelector("#drink");
-
-    img4.addEventListener("mouseover",()=>{
-        img4.src="drink.jpg";
-        img4.style="opacity:0.65;box-shadow:3px 3px 3px #333";
-        document.querySelector("#drinkl").style.backgroundColor = "whitesmoke"; 
-        
-    });
-
-    img4.addEventListener("mouseout",()=>{
-        img4.src="drink.jpg"; 
-        img4.style="opacity:1;box-shadow:none";
-        document.querySelector("#drinkl").style.backgroundColor = "white"; 
-    });
-
-
-
-    let img5 = document.querySelector("#noodle");
-
-    img5.addEventListener("mouseover",()=>{
-        img5.src="noodle.webp";
-        img5.style="opacity:0.65;box-shadow:3px 3px 3px #333";
-        document.querySelector("#noodlel").style.backgroundColor = "whitesmoke"; 
-        
-    });
-
-    img5.addEventListener("mouseout",()=>{
-        img5.src="noodle.webp"; 
-        img5.style="opacity:1;box-shadow:none";
-        document.querySelector("#noodlel").style.backgroundColor = "white"; 
-    });
-
-
-    let img6 = document.querySelector("#stomach");
-
-    img6.addEventListener("mouseover",()=>{
-        img6.src="stomach.webp";
-        img6.style="opacity:0.65;box-shadow:3px 3px 3px #333";
-        document.querySelector("#stomachl").style.backgroundColor = "whitesmoke"; 
-        
-    });
-
-    img6.addEventListener("mouseout",()=>{
-        img6.src="stomach.webp"; 
-        img6.style="opacity:1;box-shadow:none";
-        document.querySelector("#stomachl").style.backgroundColor = "white"; 
-    });
 
 
     //ongoing효과
@@ -859,4 +761,3 @@
     
     
 </script>
-
