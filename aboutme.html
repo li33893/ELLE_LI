@@ -12,6 +12,11 @@
              font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium', 'Roboto Condensed', 'Arial Narrow', 'Oswald', sans-serif;
         }
 
+        button{
+            height:40px;
+            width:80px;
+        }
+
 
         .navbar{
             position: fixed;
@@ -548,29 +553,29 @@
             
             <div class="portfolioBox" id="portfolio">
                 <div>
-                    <img src="kaximoduosample.jpg" id="">
-                    <button onclick="fnDetail()">자세히</button>
+                    <img src="kaximoduosample.jpg" class="sample">
+                    <button onclick="fnDetail()" class="btn">자세히</button>
                 </div>
                 <div>
-                    <img src="kaximoduosample.jpg">
+                    <img src="kaximoduosample.jpg" class="sample">
                     
-                    <button onclick="fnDetail()">자세히</button>
+                    <button onclick="fnDetail()" class="btn">자세히</button>
                 </div>
                 <div>
-                    <img src="kaximoduosample.jpg">
-                    <button onclick="fnDetail()">자세히</button>
+                    <img src="kaximoduosample.jpg" class="sample">
+                    <button onclick="fnDetail() " class="btn">자세히</button>
                 </div>
                 <div>
-                    <img src="kaximoduosample.jpg">
-                    <button onclick="fnDetail()">자세히</button>
+                    <img src="kaximoduosample.jpg" class="sample" >
+                    <button onclick="fnDetail()" class="btn">자세히</button>
                 </div>
                 <div>
-                    <img src="kaximoduosample.jpg">
-                    <button onclick="fnDetail()">자세히</button>
+                    <img src="kaximoduosample.jpg" class="sample" >
+                    <button onclick="fnDetail()" class="btn">자세히</button>
                 </div>
                 <div>
-                    <img src="kaximoduosample.jpg">
-                    <button onclick="fnDetail()">자세히</button>
+                    <img src="kaximoduosample.jpg" class="sample">
+                    <button onclick="fnDetail()" class="btn">자세히 </button>
                 </div>
             </div>
         </div> 
@@ -755,6 +760,22 @@
             }, 800);
         }
     }, 180);
+
+    //sample 색상을 나타내게 하는 효과
+    let btn = document.querySelectorAll(".btn");
+    let sample = document.querySelectorAll(".sample");
+
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("mouseover", () => {
+            sample[i].src = "kaximoduo.png";
+        });
+
+        btn[i].addEventListener("mouseout", () => {
+            sample[i].src = "kaximoduosample.jpg";
+        });
+    }
+
+
 
 
 
