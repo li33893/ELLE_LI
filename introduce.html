@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     
     <title>Document</title>
     <style>
@@ -141,6 +142,9 @@
 
 
         .main-menu{
+            display: flex;           
+            align-items: center;     
+            gap: 10px; 
             position:fixed;
             top: 70px;
             right:280px;
@@ -206,7 +210,8 @@
         
         <!-- to explore more -->
         <div class="main-menu">
-            <a href="aboutme.html"><img src="explore.png" class="hamburgerButton" style="height:80px;"></a> 
+            <span style="font-size:20px;">TO EXPLORE MORE!</span>
+            <a href="aboutme.html" ><span class="material-symbols-outlined" style="font-size: 60px; color:black">Arrow_Circle_Right</span></a> 
         </div>
 
         <!-- blueline -->
@@ -222,8 +227,9 @@
 </html>
 <script>
 
-
-    //현재시간
+    let icon=document.querySelector(".material-symbols-outlined");
+    let isBlack=true;
+    //현재시간+arrow반짝이는 효과
     setInterval(() => {
     let dt = new Date();
     let time = document.querySelector("#datetime");
@@ -234,6 +240,8 @@
         + dt.getHours() + ":"
         + dt.getMinutes() + ":"
         + dt.getSeconds();
+        icon.style.opacity=isBlack?0.5:0.75;
+        isBlack=!isBlack;
     }, 1000);
 
     //홈의 디바깅 마우스 오버/아우옷 효과
