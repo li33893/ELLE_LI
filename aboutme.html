@@ -15,7 +15,6 @@
         button{
             height:40px;
             width:80px;
-            box-shadow:none;
         }
 
 
@@ -72,11 +71,6 @@
         #aboutContainer{
             margin:0 auto;
             font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium', 'Roboto Condensed', 'Arial Narrow', 'Oswald', sans-serif;         
-
-        }
-
-        #aboutMeContainer{
-
 
         }
 
@@ -141,10 +135,6 @@
         }
 
 
-        #whatIGot{
-
-        }
-
         .whatIGotContainer{
             margin: 60px auto;
             display: flex;
@@ -161,10 +151,6 @@
             background-color:rgba(194,132,179,0.4);
             box-shadow: 3px 3px 3px #8a8989;
 
-        }
-
-        .whatIGot{
-           
         }
 
         .whatIGot span{
@@ -220,8 +206,9 @@
         }
 
         .portfolioBox img { 
-            width: 300px; 
-            height: auto; 
+            height:300px;
+            width:300px;
+            object-fit: contain;
         }
 
         
@@ -271,7 +258,6 @@
 
         }
 
-        #por{}
 
         #portfolio button{
             display:block;
@@ -280,10 +266,11 @@
             color:white;
             padding:5px;
             cursor: pointer;
+            border: none;         
+            box-shadow: none;     
+            outline: none;        
+            border-radius: 0;     
 
-        }
-
-        #rec{
 
         }
 
@@ -506,14 +493,7 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <th>강점</th>
-                                <td>
-                                착하고 정직
-                                <br>
-                                끈질김
-                                </td>
-                            </tr>
+
                         </table>
 
                     
@@ -532,18 +512,19 @@
             <div class="titleUnderLine"></div>
             <div class="whatIGotContainer">
                 <div class="whatIGot">
-                    <div class="skillRow"><span>Python</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:5%; text-align: right;line-height: 40px; padding-right:8px">5%</div>발전 공간이 아주 큼<div></div></div></div>
+                    <div class="skillRow"><span>Python</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div class="bar" style="width:0%; text-align: right;line-height: 40px; padding-right:8px;" targetLen="5%">0%</div>발전 공간이 아주 큼<div></div></div></div>
                     <br>
-                    <div class="skillRow"><span>Java</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:35%;text-align: right;line-height: 40px; padding-right:8px">35%</div>발전 공간이 큼<div></div></div></div>
+                    <div class="skillRow"><span>Java</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div class="bar" style="width:0%;text-align: right;line-height: 40px; padding-right:8px" targetLen="35%">0%</div>발전 공간이 큼<div></div></div></div>
                     <br>
-                    <div class="skillRow"><span>Oracle</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:38%;text-align: right;line-height: 40px; padding-right:8px">38%</div>발전 공간이 큼<div></div></div></div>
+                    <div class="skillRow"><span>Oracle</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div class="bar" style="width:0%;text-align: right;line-height: 40px; padding-right:8px" targetLen="30%">0%</div>발전 공간이 큼<div></div></div></div>
                     <br>
-                    <div class="skillRow"><span>HTML/CSS/Javascript</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div style="width:15%;text-align: right;line-height: 40px; padding-right:8px">15%</div>발전 공간이 아주 큼<div></div></div></div>
+                    <div class="skillRow"><span>HTML/CSS/Javascript</span><div style="text-align:center;line-height: 40px; color:#999797;font-size:15px"><div class="bar" style="width:0%;text-align: right;line-height: 40px; padding-right:8px" targetLen="30%">0%</div>발전 공간이 아주 큼<div></div></div></div>
                 </div>
 
                 <div class="projContainer">
                     <h3 style="font-weight: bold; color:white">| Projects</h3>
-                    <div style="padding-left:30px;color:white">▶&nbsp;&nbsp;08.21-&nbsp;&nbsp;&nbsp;&nbsp;자기 소개 페이지&nbsp;&nbsp;&nbsp;&nbsp;<span id="text">ongoing</span></div>
+                    <div style="padding-left:30px;color:white">-&nbsp;&nbsp;08.21-&nbsp;&nbsp;&nbsp;&nbsp;자기 소개 페이지&nbsp;&nbsp;&nbsp;&nbsp;<span>finished</span></div>
+                    <div style="padding-left:30px;color:white">▶&nbsp;&nbsp;09.12-&nbsp;&nbsp;&nbsp;&nbsp;사용자 정보 관리 시스템&nbsp;&nbsp;&nbsp;&nbsp;<span id="text">ongoing</span></div>
                 </div>
             </div>
         </div>
@@ -668,6 +649,8 @@
                     </tr>
                 </table>
 
+                <div style="font-size: 15px; text-align: center; margin: 20px 0;"><span aria-colcount="">© 2025 LI MEILING. All rights reserved.</div>
+
             </div>
         </div>
     </div>
@@ -679,7 +662,81 @@
 </html>
 
 <script>
-    //포트폴리오 자세히의 팝압 효과
+    //1.보유 기술의 점진 증가 효과
+    function animateBar (){
+        document.querySelectorAll(".bar").forEach(bar=>{
+            let targetLen=parseInt(bar.getAttribute("targetLen"));
+            let width=parseInt(bar.style.width);
+            let timer=setInterval(()=>{//跟别的function不一样，这里给setinterval给timer的是id
+                if(width<targetLen){
+                    width++;
+                    bar.style.width=width+"%";
+                    bar.textContent=width+"%"
+                }else{
+                    clearInterval(timer);
+                }
+            },30);
+            
+        });
+    }
+
+    //创建一个监视器
+    //IntersectionObserver交叉观察器是帮我看什么时候什么元素会出现在屏幕上
+    const observer=new IntersectionObserver((entries)=>{
+        //entries是浏览器自动传递的参数
+        //浏览器一直在后台检查被观察的元素（whatigot），当状态发生变化时，浏览器会调用我的函数
+        entries.forEach(entry=>{
+            //isIntersecting=true表示元素正在和视口交叉（可见）
+            if (entry.isIntersecting){
+                animateBar();
+                //避免重复触发
+                observer.unobserve(entry.target);
+            }
+        })
+    });
+
+    document.addEventListener("DOMContentLoaded",()=>{
+        const whatIGotSection=document.querySelector("#whatIGot");
+        if(whatIGotSection){
+            observer.observe(whatIGotSection);
+        }
+    });
+
+
+
+
+     //2. ongoing효과
+    let content = "ongoing_";
+    text = document.querySelector("#text");
+    let i = 0;
+
+    let func = setInterval(() => {
+        text.innerHTML += content.charAt(i++);
+        if (i >= content.length) {
+            setTimeout(() => {
+                text.innerHTML = "";
+                i = 0;
+            }, 800);
+        }
+    }, 180);
+
+
+      //3.sample 색상을 나타내게 하는 효과
+    let btn = document.querySelectorAll(".btn");
+    let sample = document.querySelectorAll(".sample");
+
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("mouseover", () => {
+            sample[i].src = "kaximoduo.png";
+        });
+
+        btn[i].addEventListener("mouseout", () => {
+            sample[i].src = "kaximoduosample.jpg";
+        });
+    }
+
+
+    //4. 포트폴리오 자세히의 팝압 효과
     function fnDetail(){
         let top = (screen.availHeight-600) / 2;
         let left = (screen.availWidth-1000) / 2;
@@ -688,7 +745,7 @@
 
 
 
-    //음식추천의 팝압 효과
+    //5.음식추천의 팝압 효과
 
     let popUpList=[
         {id:"spicy", name:"마라 추천"},
@@ -709,7 +766,7 @@
 
 
 
-    //음식추천의 선택시 효과
+    //6.음식추천의 선택시 효과
     let foodList=[
         {id:"spicy", src:"spicy.jpg"},
         {id:"cold", src:"cold.webp"},
@@ -745,47 +802,7 @@
 
 
 
-
-
-    //ongoing효과
-    let content = "ongoing_";
-    text = document.querySelector("#text");
-    let i = 0;
-
-    let func = setInterval(() => {
-        text.innerHTML += content.charAt(i++);
-        if (i >= content.length) {
-            setTimeout(() => {
-                text.innerHTML = "";
-                i = 0;
-            }, 800);
-        }
-    }, 180);
-
-    //sample 색상을 나타내게 하는 효과
-    let btn = document.querySelectorAll(".btn");
-    let sample = document.querySelectorAll(".sample");
-
-    for (let i = 0; i < btn.length; i++) {
-        btn[i].addEventListener("mouseover", () => {
-            sample[i].src = "kaximoduo.PNG";
-        });
-
-        btn[i].addEventListener("mouseout", () => {
-            sample[i].src = "kaximoduosample.jpg";
-        });
-    }
-
-
-
-
-
-
-    
+  
     
     
 </script>
-
-
-
-
